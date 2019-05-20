@@ -89,6 +89,8 @@ AppComponent = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__components_start_banner_start_banner_component__ = __webpack_require__("../../../../../src/app/components/start-banner/start-banner.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__components_about_container_about_container_component__ = __webpack_require__("../../../../../src/app/components/about-container/about-container.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__components_title_component_title_component_component__ = __webpack_require__("../../../../../src/app/components/title-component/title-component.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__components_blockqoute_title_blockqoute_title_component__ = __webpack_require__("../../../../../src/app/components/blockqoute-title/blockqoute-title.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__components_skills_container_skills_container_component__ = __webpack_require__("../../../../../src/app/components/skills-container/skills-container.component.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -96,6 +98,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
+
 
 
 
@@ -129,7 +133,9 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_8__components_footer_footer_component__["a" /* FooterComponent */],
             __WEBPACK_IMPORTED_MODULE_13__components_start_banner_start_banner_component__["a" /* StartBannerComponent */],
             __WEBPACK_IMPORTED_MODULE_14__components_about_container_about_container_component__["a" /* AboutContainerComponent */],
-            __WEBPACK_IMPORTED_MODULE_15__components_title_component_title_component_component__["a" /* TitleComponentComponent */]
+            __WEBPACK_IMPORTED_MODULE_15__components_title_component_title_component_component__["a" /* TitleComponentComponent */],
+            __WEBPACK_IMPORTED_MODULE_16__components_blockqoute_title_blockqoute_title_component__["a" /* BlockqouteTitleComponent */],
+            __WEBPACK_IMPORTED_MODULE_17__components_skills_container_skills_container_component__["a" /* SkillsContainerComponent */]
         ],
         imports: [
             __WEBPACK_IMPORTED_MODULE_9__angular_common_http__["a" /* HttpClientModule */],
@@ -177,7 +183,7 @@ var routing = __WEBPACK_IMPORTED_MODULE_0__angular_router__["a" /* RouterModule 
 /***/ "../../../../../src/app/components/about-container/about-container.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"about-container\">\n\n</div>\n"
+module.exports = "<div class=\"about-container\">\n  <div *ngFor=\"let section of data\" class=\"about-container__section\">\n    <div class=\"about-container__section_title\">\n      <p class=\"h3 blackColor\">{{section.title}}</p>\n      <div class=\"about-container__section_line\"></div>\n    </div>\n    <div class=\"about-container__section_desc\">\n      <p class=\"p1 blackColor\">{{section.desc}}</p>\n    </div>\n    <div *ngIf=\"section?.skills\" class=\"skills-container\">\n      <app-skills-container></app-skills-container>\n    </div>\n  </div>\n</div>\n"
 
 /***/ }),
 
@@ -189,7 +195,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "", ""]);
+exports.push([module.i, ".about-container__section {\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-wrap: wrap;\n      flex-wrap: wrap;\n  -ms-flex-align: start;\n      align-items: flex-start;\n  margin-bottom: 48px; }\n\n.about-container__section_title {\n  width: 40%;\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-align: center;\n      align-items: center;\n  -ms-flex-pack: justify;\n      justify-content: space-between; }\n  .about-container__section_title p {\n    white-space: nowrap;\n    margin: 0;\n    text-transform: uppercase; }\n\n.about-container__section_line {\n  width: 15rem;\n  height: 1px;\n  background: #2a3b4d;\n  margin-right: 8rem;\n  margin-left: 6rem;\n  width: 100%; }\n\n.about-container__section_desc {\n  width: 60%; }\n\n.skills-container {\n  margin: 32px 0;\n  width: 100%; }\n", ""]);
 
 // exports
 
@@ -217,6 +223,34 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 var AboutContainerComponent = (function () {
     function AboutContainerComponent() {
+        this.data = [
+            {
+                title: '01. My release',
+                desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. A accusamus accusantium consectetur distinctio ducimus earum eveniet ex, explicabo impedit iste nam nobis numquam porro provident quas ratione recusandae, reprehenderit tempore?\n' +
+                    '      Lorem ipsum dolor sit amet, consectetur adipisicing elit. A animi architecto asperiores aut cum distinctio ea eum harum ipsum magni minus, nulla quo quos reiciendis, repellat, repellendus similique suscipit totam?\n' +
+                    '      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam, aut, doloribus esse expedita fuga laudantium magni nesciunt nihil, nisi officiis perferendis quia! Deserunt doloribus et itaque natus quam tempore, voluptatem!',
+            },
+            {
+                title: '02. My skills',
+                desc: 'Now is the time for you to meet some\n' +
+                    'the skills, software, systems I use to\n' +
+                    'develop the projects that you can check\n' +
+                    'clicking here in my portfolio..',
+                skills: true,
+            },
+            {
+                title: '03. My CULTURE',
+                desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. A accusamus accusantium consectetur distinctio ducimus earum eveniet ex, explicabo impedit iste nam nobis numquam porro provident quas ratione recusandae, reprehenderit tempore?\n' +
+                    '      Lorem ipsum dolor sit amet, consectetur adipisicing elit. A animi architecto asperiores aut cum distinctio ea eum harum ipsum magni minus, nulla quo quos reiciendis, repellat, repellendus similique suscipit totam?\n' +
+                    '      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam, aut, doloribus esse expedita fuga laudantium magni nesciunt nihil, nisi officiis perferendis quia! Deserunt doloribus et itaque natus quam tempore, voluptatem!',
+            },
+            {
+                title: '04. My RECOGNITIONS',
+                desc: 'After many, many hours of hard work, preparing the\n' +
+                    'layout, separating the photos, choosing the gifs,\n' +
+                    'editing the videos and encoding this site.',
+            },
+        ];
     }
     AboutContainerComponent.prototype.ngOnInit = function () {
     };
@@ -232,6 +266,67 @@ AboutContainerComponent = __decorate([
 ], AboutContainerComponent);
 
 //# sourceMappingURL=about-container.component.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/blockqoute-title/blockqoute-title.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<p>\n  blockqoute-title works!\n</p>\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/blockqoute-title/blockqoute-title.component.scss":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/blockqoute-title/blockqoute-title.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return BlockqouteTitleComponent; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var BlockqouteTitleComponent = (function () {
+    function BlockqouteTitleComponent() {
+    }
+    BlockqouteTitleComponent.prototype.ngOnInit = function () {
+    };
+    return BlockqouteTitleComponent;
+}());
+BlockqouteTitleComponent = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_11" /* Component */])({
+        selector: 'app-blockqoute-title',
+        template: __webpack_require__("../../../../../src/app/components/blockqoute-title/blockqoute-title.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/components/blockqoute-title/blockqoute-title.component.scss")]
+    }),
+    __metadata("design:paramtypes", [])
+], BlockqouteTitleComponent);
+
+//# sourceMappingURL=blockqoute-title.component.js.map
 
 /***/ }),
 
@@ -299,7 +394,7 @@ FooterComponent = __decorate([
 /***/ "../../../../../src/app/components/header/header.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"header-container\">\n  <div class=\"header-container__logo\" [routerLink]=\"['/']\">SERGEY UKHANOV</div>\n  <div class=\"header-container__right-area\">\n    <div class=\"header-container__links-area\">\n      <p class=\"header-container__link\" [routerLink]=\"['/']\">about</p>\n      <p class=\"header-container__link\" [routerLink]=\"['/portfolio']\">portfolio</p>\n      <p class=\"header-container__link\" [routerLink]=\"['/blog']\">blog</p>\n      <p class=\"header-container__link\" [routerLink]=\"['/contacts']\">contacts</p>\n    </div>\n    <div class=\"header-container__social-area\">\n      <a href=\"mailto:sergey.picasel@gmail.com\" class=\"header-container__social-link\" style=\"background-image: url(/assets/img/email.svg)\"></a>\n      <a href=\"https://t.me/SergeyUkhanov\" target=\"_blank\" class=\"header-container__social-link\" style=\"background-image: url(/assets/img/telegram.svg)\"></a>\n      <a href=\"https://api.whatsapp.com/send?phone=79261474594\" target=\"_blank\" class=\"header-container__social-link\" style=\"background-image: url(/assets/img/whatsapp.svg)\"></a>\n    </div>\n  </div>\n</div>\n"
+module.exports = "<div class=\"header-container\">\n  <div class=\"header-container__logo\" [routerLink]=\"['/']\">SERGEY UKHANOV</div>\n  <div class=\"header-container__right-area\">\n    <div class=\"header-container__links-area\">\n      <p class=\"header-container__link\" [routerLink]=\"['/']\">about</p>\n      <p class=\"header-container__link\" [routerLink]=\"['/portfolio']\">portfolio</p>\n      <p class=\"header-container__link\" [routerLink]=\"['/blog']\">blog</p>\n      <p class=\"header-container__link\" [routerLink]=\"['/contacts']\">contacts</p>\n    </div>\n    <div class=\"header-container__social-area\">\n      <a href=\"mailto:sergey.picasel@gmail.com\" class=\"header-container__social-link\" style=\"background-image: url(./assets/img/email.svg)\"></a>\n      <a href=\"https://t.me/SergeyUkhanov\" target=\"_blank\" class=\"header-container__social-link\" style=\"background-image: url(./assets/img/telegram.svg)\"></a>\n      <a href=\"https://api.whatsapp.com/send?phone=79261474594\" target=\"_blank\" class=\"header-container__social-link\" style=\"background-image: url(./assets/img/whatsapp.svg)\"></a>\n    </div>\n  </div>\n</div>\n"
 
 /***/ }),
 
@@ -354,6 +449,175 @@ HeaderComponent = __decorate([
 ], HeaderComponent);
 
 //# sourceMappingURL=header.component.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/skills-container/skills-container.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"skills-container\">\n  <div *ngFor=\"let item of data\" class=\"skills-container__card\">\n      <div class=\"h3 blackColor card__title\">{{item.title}}</div>\n      <div class=\"card-area\">\n        <div *ngFor=\"let skill of item.skills\" class=\"card-area__icons\">\n          <div class=\"icons_photo\" [ngStyle]=\"{'background-image': 'url(/assets/img/skills/' + skill.image + '.png)'}\"></div>\n          <p class=\"p6 icons_text\">{{skill.title}}</p>\n        </div>\n      </div>\n  </div>\n</div>\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/skills-container/skills-container.component.scss":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ":host {\n  width: 100%; }\n\n.skills-container__card {\n  margin-bottom: 32px;\n  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);\n  padding: 4rem;\n  min-height: 13rem; }\n\n.card__title {\n  padding-bottom: 16px;\n  border-bottom: 1px solid rgba(42, 59, 77, 0.05);\n  margin-bottom: 24px; }\n\n.card-area {\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-wrap: wrap;\n      flex-wrap: wrap; }\n\n.card-area__icons {\n  margin: 0 72px 0 0; }\n  .card-area__icons:last-child {\n    margin: 0; }\n\n.icons_photo {\n  width: 90px;\n  height: 90px;\n  background-repeat: no-repeat;\n  background-size: contain;\n  background-position: center;\n  margin-bottom: 16px; }\n\n.icons_text {\n  text-align: center; }\n", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/skills-container/skills-container.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SkillsContainerComponent; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var SkillsContainerComponent = (function () {
+    function SkillsContainerComponent() {
+        this.data = [
+            {
+                title: 'HTML',
+                skills: [
+                    {
+                        title: 'HTML5',
+                        image: 'html5',
+                    },
+                    {
+                        title: 'JSX',
+                        image: 'react',
+                    }
+                ]
+            },
+            {
+                title: 'CSS',
+                skills: [
+                    {
+                        title: 'CSS3',
+                        image: 'css3',
+                    },
+                    {
+                        title: 'SASS',
+                        image: 'sass',
+                    },
+                    {
+                        title: 'Bootstrap',
+                        image: 'bootstrap',
+                    },
+                    {
+                        title: 'Materialize',
+                        image: 'materialize',
+                    }
+                ]
+            },
+            {
+                title: 'JavaScript',
+                skills: [
+                    {
+                        title: 'React',
+                        image: 'react',
+                    },
+                    {
+                        title: 'Angular',
+                        image: 'angular',
+                    },
+                    {
+                        title: 'Javascript',
+                        image: 'javascript',
+                    },
+                    {
+                        title: 'Node',
+                        image: 'nodejs',
+                    },
+                    {
+                        title: 'Ionic',
+                        image: 'ionic',
+                    },
+                    {
+                        title: 'jQuery',
+                        image: 'jquery',
+                    }
+                ]
+            },
+            {
+                title: 'Back-End',
+                skills: [
+                    {
+                        title: 'PostgreSQL',
+                        image: 'postgresql',
+                    }
+                ]
+            },
+            {
+                title: 'Build Tools',
+                skills: [
+                    {
+                        title: 'Webpack',
+                        image: 'webpack',
+                    },
+                    {
+                        title: 'Gulp',
+                        image: 'gulp',
+                    },
+                    {
+                        title: 'Grunt',
+                        image: 'grunt',
+                    },
+                    {
+                        title: 'Bower',
+                        image: 'bower',
+                    }
+                ]
+            },
+            {
+                title: 'Other',
+                skills: [
+                    {
+                        title: 'Github',
+                        image: 'github',
+                    },
+                    {
+                        title: 'Photoshop',
+                        image: 'photoshop',
+                    }
+                ]
+            }
+        ];
+    }
+    SkillsContainerComponent.prototype.ngOnInit = function () {
+    };
+    return SkillsContainerComponent;
+}());
+SkillsContainerComponent = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_11" /* Component */])({
+        selector: 'app-skills-container',
+        template: __webpack_require__("../../../../../src/app/components/skills-container/skills-container.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/components/skills-container/skills-container.component.scss")]
+    }),
+    __metadata("design:paramtypes", [])
+], SkillsContainerComponent);
+
+//# sourceMappingURL=skills-container.component.js.map
 
 /***/ }),
 
@@ -608,7 +872,7 @@ ContactsComponent = __decorate([
 /***/ "../../../../../src/app/pages/index/index.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"index-container\">\n\n  <app-start-banner></app-start-banner>\n\n  <app-title-component [text]=\"'About me'\"></app-title-component>\n\n  <app-about-container></app-about-container>\n\n</div>\n"
+module.exports = "<div class=\"index-container\">\n\n  <app-start-banner></app-start-banner>\n\n  <app-title-component [text]=\"'About me'\"></app-title-component>\n  <div class=\"standartPadding\">\n    <app-about-container></app-about-container>\n  </div>\n\n\n</div>\n"
 
 /***/ }),
 
