@@ -145,7 +145,8 @@
     top: 100px;
     left: 0;
     z-index: 4;
-    width: 100%;
+    width: calc(100% - 40px);
+    padding: 0 20px;
     font: 500 24px/35px 'Work Sans', 'Helvetica', sans-serif;
   }
 
