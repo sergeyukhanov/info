@@ -1,0 +1,23 @@
+.app-container {
+
+}
+
+.app-container__main {
+  //padding-left: 80px;
+}
+
+.init-state {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: #ffffff;
+  z-index: 9999;
+  opacity: 1;
+  transition: all 0.5s;
+  &--active {
+    opacity: 0;
+    z-index: -1;
+  }
+}

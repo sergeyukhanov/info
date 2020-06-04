@@ -1,0 +1,224 @@
+.header-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  height: 100%;
+  width: calc(100% - 110px);
+  transform: translateX(calc(-100% + 80px));
+  transition: transform 1000ms cubic-bezier(0.19, 1, 0.22, 1) 0ms;
+}
+
+.header-container__main-nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+  border-right: 1px solid #efefef;
+  background-color: #ffffff;
+}
+
+.main-nav__outer,
+.main-nav__inner {
+  overflow: hidden;
+  transition: transform 1000ms cubic-bezier(0.19, 1, 0.22, 1) 0ms;
+}
+
+.main-nav__outer {
+  display: flex;
+  height: 100%;
+  transform: translateX(0%);
+}
+
+.main-nav__inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transform: translateX(100%);
+  padding: 100px 80px 100px 100px;
+  width: 100%;
+}
+
+.header-container__nav-button {
+  height: 58px;
+  width: 58px;
+  border-radius: 100%;
+  background: #2a2a2c;
+  position: absolute;
+  top: 50%;
+  right: 0%;
+  transform: translate(50%, -50%);
+  z-index: 5;
+  cursor: pointer;
+  span {
+    display: block;
+    height: 2px;
+    width: 0;
+    background: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -1px 0 0 -13px;
+    margin-left: 0;
+    transition: all 0.5s;
+    &:nth-child(1) {
+      transform: translateY(-5px);
+    }
+    &:nth-child(2) {
+      transform: translateY(5px);
+    }
+  }
+  &:hover {
+    span {
+      &:nth-child(1) {
+        transform: translateY(-7px);
+      }
+      &:nth-child(2) {
+        transform: translateY(7px);
+      }
+    }
+  }
+  &.actionButton {
+    span {
+      &:nth-child(1) {
+        transform: rotate(45deg);
+      }
+      &:nth-child(2) {
+        transform: rotate(-45deg);
+      }
+    }
+  }
+}
+
+.header-container__capture {
+  position: absolute;
+  bottom: 0;
+  right: 40px;
+  white-space: nowrap;
+  transform: rotate(90deg);
+  transform-origin: 100% 50%;
+  z-index: 3;
+}
+
+.main-nav__menu-list {
+  width: 40%;
+}
+
+.main-nav__item {
+  position: relative;
+  cursor: pointer;
+  transform: translateX(100px);
+  opacity: 0;
+  transition: transform 0ms cubic-bezier(0.19, 1, 0.22, 1) 1000ms, opacity 0ms cubic-bezier(0.19, 1, 0.22, 1) 1000ms;
+  &.active-link {
+    color: #000;
+    &::before {
+      opacity: 1;
+    }
+  }
+  &::before {
+    display: block;
+    content: '';
+    width: 14px;
+    height: 14px;
+    border-radius: 100%;
+    background: #000;
+    position: absolute;
+    top: 50%;
+    margin-top: -7px;
+    left: -35px;
+    opacity: 0;
+  }
+  &:hover {
+    color: #000;
+    &::before {
+      opacity: 1;
+    }
+  }
+}
+
+.main-nav__menu-photo {
+  height: 100%;
+  width: 60%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  .main-nav__picture-area {
+    position: absolute;
+    opacity: 0;
+    width: 100%;
+    max-width: 600px;
+    height: 100%;
+    max-height: 512px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: opacity 500ms cubic-bezier(0.19, 1, 0.22, 1) 0ms, z-index 0ms cubic-bezier(0.19, 1, 0.22, 1) 500ms;
+    &.active {
+      opacity: 1;
+    }
+    &.hover-active {
+      opacity: 1;
+      transition: opacity 500ms cubic-bezier(0.19, 1, 0.22, 1) 0ms, z-index 0ms cubic-bezier(0.19, 1, 0.22, 1) 0ms;
+      z-index: 300;
+    }
+  }
+}
+
+.header-container__social-links {
+  position: absolute;
+  bottom: 30px;
+  left: 100px;
+  font: 400 18px/30px 'Work Sans', 'Helvetica', sans-serif;
+  color: #9b9ba4;
+}
+
+.social-links__email {
+  transition: color 700ms cubic-bezier(0.19, 1, 0.22, 1) 0ms;
+  color: #2a2a2c;
+  font: inherit;
+}
+
+.header-container {
+  &.header-container--animation-start {
+    .header-container__nav-button {
+      span {
+        width: 26px;
+        margin-left: -13px;
+      }
+    }
+  }
+}
+
+.header-container {
+  &.displayed {
+    transform: translateX(0);
+    .main-nav__item {
+      transform: translateX(0);
+      opacity: 1;
+      transition: transform 1000ms cubic-bezier(0.19, 1, 0.22, 1) 0ms, opacity 1000ms cubic-bezier(0.19, 1, 0.22, 1) 0ms;
+      &:nth-child(1) {
+        transition-delay: 0ms;
+      }
+      &:nth-child(2) {
+        transition-delay: 50ms;
+      }
+      &:nth-child(3) {
+        transition-delay: 100ms;
+      }
+      &:nth-child(4) {
+        transition-delay: 150ms;
+      }
+      &:nth-child(5) {
+        transition-delay: 200ms;
+      }
+    }
+    .main-nav__inner {
+      transform: translateX(0);
+    }
+  }
+}
+
