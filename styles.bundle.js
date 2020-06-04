@@ -1,12 +1,12 @@
 webpackJsonp([2],{
 
-/***/ "../../../../../src/styles.css":
+/***/ "../../../../../src/styles.scss":
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__("../../../../css-loader/index.js?{\"sourceMap\":false,\"importLoaders\":1}!../../../../postcss-loader/index.js?{\"ident\":\"postcss\"}!../../../../../src/styles.css");
+var content = __webpack_require__("../../../../css-loader/index.js?{\"sourceMap\":false,\"importLoaders\":1}!../../../../postcss-loader/index.js?{\"ident\":\"postcss\"}!../../../../sass-loader/lib/loader.js?{\"sourceMap\":false,\"precision\":8,\"includePaths\":[]}!../../../../../src/styles.scss");
 if(typeof content === 'string') content = [[module.i, content, '']];
 // add the styles to the DOM
 var update = __webpack_require__("../../../../style-loader/addStyles.js")(content, {});
@@ -15,8 +15,13 @@ if(content.locals) module.exports = content.locals;
 if(false) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
+<<<<<<< HEAD
 		module.hot.accept("!!../node_modules/css-loader/index.js??ref--8-1!../node_modules/postcss-loader/index.js??postcss!./styles.scss", function() {
 			var newContent = require("!!../node_modules/css-loader/index.js??ref--8-1!../node_modules/postcss-loader/index.js??postcss!./styles.scss");
+=======
+		module.hot.accept("!!../node_modules/css-loader/index.js??ref--9-1!../node_modules/postcss-loader/index.js??postcss!../node_modules/sass-loader/lib/loader.js??ref--9-3!./styles.scss", function() {
+			var newContent = require("!!../node_modules/css-loader/index.js??ref--9-1!../node_modules/postcss-loader/index.js??postcss!../node_modules/sass-loader/lib/loader.js??ref--9-3!./styles.scss");
+>>>>>>> 188fd630da9290439e751fd070b8f9c83b43f184
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -27,7 +32,7 @@ if(false) {
 
 /***/ }),
 
-/***/ "../../../../css-loader/index.js?{\"sourceMap\":false,\"importLoaders\":1}!../../../../postcss-loader/index.js?{\"ident\":\"postcss\"}!../../../../../src/styles.css":
+/***/ "../../../../css-loader/index.js?{\"sourceMap\":false,\"importLoaders\":1}!../../../../postcss-loader/index.js?{\"ident\":\"postcss\"}!../../../../sass-loader/lib/loader.js?{\"sourceMap\":false,\"precision\":8,\"includePaths\":[]}!../../../../../src/styles.scss":
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
@@ -35,7 +40,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "/* You can add global styles to this file, and also import other style files */\n", ""]);
+exports.push([module.i, "@font-face {\n  font-family: 'Semibold';\n  src: url(\"https://sergeyukhanov.github.io/sergeyukhanov-github-pages/assets/fonts/ProximaNova-Semibold.eot?\") format(\"eot\"), url(\"https://sergeyukhanov.github.io/sergeyukhanov-github-pages/assets/fonts/ProximaNova-Semibold.woff\") format(\"woff\"), url(\"https://sergeyukhanov.github.io/sergeyukhanov-github-pages/assets/fonts/ProximaNova-Semibold.ttf\") format(\"truetype\"), url(\"https://sergeyukhanov.github.io/sergeyukhanov-github-pages/assets/fonts/ProximaNova-Semibold.svg#svgFontName\") format(\"svg\"); }\n\n@font-face {\n  font-family: 'Regular';\n  src: url(\"https://sergeyukhanov.github.io/sergeyukhanov-github-pages/assets/fonts/ProximaNova-Regular.eot?\") format(\"eot\"), url(\"https://sergeyukhanov.github.io/sergeyukhanov-github-pages/assets/fonts/ProximaNova-Regular.woff\") format(\"woff\"), url(\"https://sergeyukhanov.github.io/sergeyukhanov-github-pages/assets/fonts/ProximaNova-Regular.ttf\") format(\"truetype\"), url(\"https://sergeyukhanov.github.io/sergeyukhanov-github-pages/assets/fonts/ProximaNova-Regular.svg\") format(\"svg\"); }\n\n@font-face {\n  font-family: 'Formular';\n  src: url(\"https://sergeyukhanov.github.io/sergeyukhanov-github-pages/assets/fonts/formular-medium.woff\") format(\"woff\"), url(\"https://sergeyukhanov.github.io/sergeyukhanov-github-pages/assets/fonts/formular-medium.woff2\") format(\"woff2\"); }\n\n* {\n  margin: 0;\n  padding: 0;\n  outline: none;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale; }\n\nstrong {\n  font-weight: normal; }\n\nbody {\n  background: #FFFFFF;\n  transition: background 200ms ease-out;\n  margin: 0; }\n  body.overflow {\n    overflow: hidden; }\n  body a {\n    text-decoration: none; }\n    body a:hover {\n      text-decoration: none;\n      color: #FFFFFF; }\n\nhtml {\n  height: 100%;\n  font-size: 8px; }\n  @media (min-width: 1280px) {\n    html {\n      font-size: 10px; } }\n\n* {\n  outline: none; }\n\nbutton {\n  background: transparent;\n  box-shadow: none;\n  border: 0; }\n\n.standartPadding {\n  padding: 0 32px; }\n\n.whiteColor {\n  color: #ffffff; }\n\n.blackColor {\n  color: #2a3b4d; }\n\n.h1 {\n  font-family: Formular;\n  font-size: 40px;\n  letter-spacing: 1px;\n  margin-bottom: 16px; }\n\n.p1 {\n  font-family: Regular;\n  font-size: 24px;\n  margin-bottom: 16px;\n  letter-spacing: 1px; }\n\n.p6 {\n  font-family: Regular;\n  font-size: 16px;\n  margin-bottom: 8px;\n  letter-spacing: 1px; }\n\n.h3 {\n  font-family: Semibold;\n  font-size: 24px;\n  margin-bottom: 16px;\n  letter-spacing: 1px; }\n\n.h2 {\n  font-family: Regular;\n  /* font-family: Semibold; */\n  font-size: 40px;\n  letter-spacing: 1px;\n  margin-bottom: 16px;\n  /* text-transform: uppercase; */ }\n", ""]);
 
 // exports
 
